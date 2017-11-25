@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Games {
+struct Games: Codable {
     let currency: String
     let items: [GameItem]
     
@@ -26,7 +26,7 @@ struct Games {
     }
 }
 
-struct GameItem {
+struct GameItem: Codable {
     let name: String
     let jackpot: Int
     let date: Date
@@ -36,7 +36,7 @@ struct GameItem {
             let name = json["name"] as? String,
             let jackpot = json["jackpot"] as? Int,
             let stringDate = json["date"] as? String,
-            let date = DateFormatter.rfc3339Formatter().date(from: stringDate)
+            let date = DateFormatter.rfc3339Formatter.date(from: stringDate)
             else {return nil}
         
         self.name = name

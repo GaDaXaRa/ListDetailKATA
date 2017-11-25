@@ -20,8 +20,8 @@
 		3FD42A711FC9B91E005B9164 /* FetchGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A701FC9B91E005B9164 /* FetchGames.swift */; };
 		3FD42A741FC9B974005B9164 /* FetchGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A731FC9B974005B9164 /* FetchGamesTests.swift */; };
 		3FD42A771FC9B9CD005B9164 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A761FC9B9CD005B9164 /* Mocks.swift */; };
-		3FD42A791FC9C166005B9164 /* GamesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A781FC9C166005B9164 /* GamesCache.swift */; };
-		3FD42A7D1FC9C2B1005B9164 /* GamesCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A7C1FC9C2B1005B9164 /* GamesCacheTests.swift */; };
+		3FD42A791FC9C166005B9164 /* TimedCodableCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */; };
+		3FD42A7D1FC9C2B1005B9164 /* TimedCodableCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A7C1FC9C2B1005B9164 /* TimedCodableCacheTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		3FD42A701FC9B91E005B9164 /* FetchGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGames.swift; sourceTree = "<group>"; };
 		3FD42A731FC9B974005B9164 /* FetchGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGamesTests.swift; sourceTree = "<group>"; };
 		3FD42A761FC9B9CD005B9164 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
-		3FD42A781FC9C166005B9164 /* GamesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesCache.swift; sourceTree = "<group>"; };
-		3FD42A7C1FC9C2B1005B9164 /* GamesCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesCacheTests.swift; sourceTree = "<group>"; };
+		3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedCodableCache.swift; sourceTree = "<group>"; };
+		3FD42A7C1FC9C2B1005B9164 /* TimedCodableCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedCodableCacheTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD42A701FC9B91E005B9164 /* FetchGames.swift */,
-				3FD42A781FC9C166005B9164 /* GamesCache.swift */,
+				3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD42A731FC9B974005B9164 /* FetchGamesTests.swift */,
-				3FD42A7C1FC9C2B1005B9164 /* GamesCacheTests.swift */,
+				3FD42A7C1FC9C2B1005B9164 /* TimedCodableCacheTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 			files = (
 				3FD42A411FC9857A005B9164 /* ViewController.swift in Sources */,
 				3FD42A711FC9B91E005B9164 /* FetchGames.swift in Sources */,
-				3FD42A791FC9C166005B9164 /* GamesCache.swift in Sources */,
+				3FD42A791FC9C166005B9164 /* TimedCodableCache.swift in Sources */,
 				3FD42A3F1FC98579005B9164 /* AppDelegate.swift in Sources */,
 				3FD42A671FC98704005B9164 /* Games.swift in Sources */,
 				3FD42A6C1FC99574005B9164 /* Date.swift in Sources */,
@@ -315,7 +315,7 @@
 				3FD42A651FC986D3005B9164 /* GameItemTests.swift in Sources */,
 				3FD42A6E1FC99D34005B9164 /* GameItemsTests.swift in Sources */,
 				3FD42A741FC9B974005B9164 /* FetchGamesTests.swift in Sources */,
-				3FD42A7D1FC9C2B1005B9164 /* GamesCacheTests.swift in Sources */,
+				3FD42A7D1FC9C2B1005B9164 /* TimedCodableCacheTests.swift in Sources */,
 				3FD42A541FC9857A005B9164 /* IGT_TestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,7 +35,7 @@ class GameItemTests: XCTestCase {
         }
         XCTAssertEqual(GameItemTests.gameName, sut.name)
         XCTAssertEqual(GameItemTests.gameJackpot, sut.jackpot)
-        XCTAssertEqual(DateFormatter.rfc3339Formatter().date(from: GameItemTests.gameDate), sut.date)
+        XCTAssertEqual(DateFormatter.rfc3339Formatter.date(from: GameItemTests.gameDate), sut.date)
     }
     
 }

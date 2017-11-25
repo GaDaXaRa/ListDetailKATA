@@ -12,18 +12,30 @@ protocol FetchGamesTask {
     func fetchGames(_ : @escaping ([String: Any]?) -> ())
 }
 
+protocol GamesCache {
+    func store(games: Games)
+    func fetch(_ completion: @escaping (Games?)->())
+}
+
 class FetchGames: NSObject {
     
     let fetchGamesTask: FetchGamesTask
+    let cache: GamesCache
     
-    init(fetchGamesTask: FetchGamesTask) {
+    init(fetchGamesTask: FetchGamesTask, cache: GamesCache) {
         self.fetchGamesTask = fetchGamesTask
+        self.cache = cache
     }
     
     func fetchGames(_ completion: @escaping (Games?) -> ()) {
-        fetchGamesTask.fetchGames { (json) in
-            completion(Games(json: json))
+        cache.fetch { (games) in
+            if let games = games {
+                completion(games)
+                return
+            }
+            self.fetchGamesTask.fetchGames { (json) in
+                completion(Games(json: json))
+            }
         }
     }
-
 }

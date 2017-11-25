@@ -11,7 +11,7 @@ import Foundation
 extension DateFormatter {
     static var rfc3339Format = "yyyy-MM-dd'T'HH:mm:ssZ"
     
-    static func rfc3339Formatter() -> DateFormatter {
+    static var rfc3339Formatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = DateFormatter.rfc3339Format
         return formatter

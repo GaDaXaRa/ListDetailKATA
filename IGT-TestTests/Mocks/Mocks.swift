@@ -10,6 +10,7 @@ import Foundation
 
 struct Mocks {
     static let gamesJSON = try! JSONSerialization.jsonObject(with: Mocks.gamesJSONString.data(using: .utf8)!, options: []) as! [String: Any]
+    static let cachedGamesJSON = try! JSONSerialization.jsonObject(with: Mocks.gamesCacheJSONString.data(using: .utf8)!, options: []) as! [String: Any]
     
     static let gamesJSONString = """
                         {
@@ -59,5 +60,20 @@ struct Mocks {
                         ]
                         }
                         """
-
+    static let gamesCacheJSONString = """
+                        {
+                        "response": "success",
+                        "currency" : "EUR",
+                        "data" : [
+                        {
+                        "name": "Game 12",
+                        "jackpot": 34000000,
+                        "date": "2015-01-25T20:20:30+01:00"
+                        },
+                        {
+                        "name": "Game 12",
+                        "jackpot": 100000000,
+                        "date": "2015-02-16T08:40:30+01:00"
+                        }]}
+                        """
 }
