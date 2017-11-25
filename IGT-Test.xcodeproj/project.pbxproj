@@ -22,6 +22,7 @@
 		3FD42A771FC9B9CD005B9164 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A761FC9B9CD005B9164 /* Mocks.swift */; };
 		3FD42A791FC9C166005B9164 /* TimedCodableCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */; };
 		3FD42A7D1FC9C2B1005B9164 /* TimedCodableCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A7C1FC9C2B1005B9164 /* TimedCodableCacheTests.swift */; };
+		3FD42A7F1FCA00F0005B9164 /* DiskCodablePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A7E1FCA00F0005B9164 /* DiskCodablePersistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		3FD42A761FC9B9CD005B9164 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedCodableCache.swift; sourceTree = "<group>"; };
 		3FD42A7C1FC9C2B1005B9164 /* TimedCodableCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedCodableCacheTests.swift; sourceTree = "<group>"; };
+		3FD42A7E1FCA00F0005B9164 /* DiskCodablePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCodablePersistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				3FD42A701FC9B91E005B9164 /* FetchGames.swift */,
 				3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */,
+				3FD42A7E1FCA00F0005B9164 /* DiskCodablePersistence.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				3FD42A791FC9C166005B9164 /* TimedCodableCache.swift in Sources */,
 				3FD42A3F1FC98579005B9164 /* AppDelegate.swift in Sources */,
 				3FD42A671FC98704005B9164 /* Games.swift in Sources */,
+				3FD42A7F1FCA00F0005B9164 /* DiskCodablePersistence.swift in Sources */,
 				3FD42A6C1FC99574005B9164 /* Date.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

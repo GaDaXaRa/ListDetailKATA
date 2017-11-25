@@ -26,30 +26,30 @@ class TimedCodableCacheTests: XCTestCase {
     }
     
     func testShouldReturnGamesIfNotTimeintervalReached() {
-        let sut = TimedCodableCache(interval: 60, persistence: MockedPersistence())
+        let sut = TimedCodableCache<Games>(interval: 60, persistence: MockedPersistence())
         let startDate = Date()
         var oneMinuteButASecond = DateComponents()
         oneMinuteButASecond.second = 59
         let endDate = Calendar.current.date(byAdding: oneMinuteButASecond, to: startDate)!
-        sut.store(games: TimedCodableCacheTests.games, at: startDate)
+        sut.store(info: TimedCodableCacheTests.games, at: startDate)
         XCTAssertEqual(TimedCodableCacheTests.games, sut.fetch(at: endDate))
     }
     
     func testShouldReturnNilIfTimeExpired() {
-        let sut = TimedCodableCache(interval: 60, persistence: MockedPersistence())
+        let sut = TimedCodableCache<Games>(interval: 60, persistence: MockedPersistence())
         let startDate = Date()
         var twoMinutes = DateComponents()
         twoMinutes.minute = 2
         let endDate = Calendar.current.date(byAdding: twoMinutes, to: startDate)!
-        sut.store(games: TimedCodableCacheTests.games, at: startDate)
+        sut.store(info: TimedCodableCacheTests.games, at: startDate)
         XCTAssertNil(sut.fetch(at: endDate))
     }
     
     func testShouldReturnGamesBetweenExecutions() {
         let persistence = MockedPersistence()
-        var sut = TimedCodableCache(interval: 60, persistence: persistence)
-        sut.store(games: TimedCodableCacheTests.games, at: Date())
-        sut = TimedCodableCache(interval: 60, persistence: persistence)
+        var sut = TimedCodableCache<Games>(interval: 60, persistence: persistence)
+        sut.store(info: TimedCodableCacheTests.games, at: Date())
+        sut = TimedCodableCache<Games>(interval: 60, persistence: persistence)
         XCTAssertEqual(TimedCodableCacheTests.games, sut.fetch(at: Date()))
     }
     
@@ -59,9 +59,9 @@ class TimedCodableCacheTests: XCTestCase {
         var twoMinutes = DateComponents()
         twoMinutes.minute = 2
         let endDate = Calendar.current.date(byAdding: twoMinutes, to: startDate)!
-        var sut = TimedCodableCache(interval: 60, persistence: persistence)
-        sut.store(games: TimedCodableCacheTests.games, at: startDate)
-        sut = TimedCodableCache(interval: 60, persistence: persistence)
+        var sut = TimedCodableCache<Games>(interval: 60, persistence: persistence)
+        sut.store(info: TimedCodableCacheTests.games, at: startDate)
+        sut = TimedCodableCache<Games>(interval: 60, persistence: persistence)
         XCTAssertNil(sut.fetch(at: endDate))
     }
 }

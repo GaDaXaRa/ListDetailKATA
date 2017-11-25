@@ -13,45 +13,46 @@ protocol CodableCachePersistence {
     func fetch() -> Codable?
 }
 
-class TimedCodableCache: NSObject {
+struct TimedCodableCache<T: Codable> {
     
     struct GamesAppointment: Codable {
         var date: Date
-        var games: Games
+        var info: T
     }
     
-    let interval: TimeInterval
-    let persistence: CodableCachePersistence
+    private let interval: TimeInterval
+    private let persistence: CodableCachePersistence
     
-    private var inMemoryGames: GamesAppointment?
-    
-    private var storedGames: GamesAppointment? {
-        if let inMemoryGames = inMemoryGames {return inMemoryGames}
+    private var storedInfo: GamesAppointment? {
         return persistence.fetch() as? GamesAppointment
     }
     
-    init(interval: TimeInterval = 60 * 60, persistence: CodableCachePersistence) {
+    init(interval: TimeInterval = 60 * 60, persistence: CodableCachePersistence = DiskCodablePersistence<T>()) {
         self.interval = interval
         self.persistence = persistence
     }
     
-    func store(games: Games, at date: Date) {
-        inMemoryGames = GamesAppointment(date: date, games: games)
-        persistence.persist(inMemoryGames)
+    func store(info: T, at date: Date) {
+        persistence.persist(GamesAppointment(date: date, info: info))
     }
     
-    func fetch(at date: Date) -> Games? {
-        guard let storedGames = storedGames, storedGames.date.addingTimeInterval(interval) > date else {return nil}
-        return storedGames.games
+    func fetch(at date: Date) -> T? {
+        guard let storedInfo = storedInfo, storedInfo.date.addingTimeInterval(interval) > date else {return nil}
+        return storedInfo.info
     }
 }
 
 extension TimedCodableCache: GamesCache {
     func store(games: Games) {
-        store(games: games, at: Date())
+        guard let info = games as? T else {return}
+        store(info: info, at: Date())
     }
     
     func fetch(_ completion: @escaping (Games?) -> ()) {
-        completion(fetch(at: Date()))
+        guard let games = fetch(at: Date()) as? Games else {
+            completion(nil)
+            return
+        }
+        completion(games)
     }    
 }

@@ -19,10 +19,10 @@ protocol GamesCache {
 
 class FetchGames: NSObject {
     
-    let fetchGamesTask: FetchGamesTask
-    let cache: GamesCache
+    private let fetchGamesTask: FetchGamesTask
+    private let cache: GamesCache
     
-    init(fetchGamesTask: FetchGamesTask, cache: GamesCache) {
+    init(fetchGamesTask: FetchGamesTask, cache: GamesCache = TimedCodableCache<Games>()) {
         self.fetchGamesTask = fetchGamesTask
         self.cache = cache
     }
