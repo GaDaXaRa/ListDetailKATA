@@ -17,6 +17,9 @@
 		3FD42A671FC98704005B9164 /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A661FC98704005B9164 /* GameItem.swift */; };
 		3FD42A6C1FC99574005B9164 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A6B1FC99574005B9164 /* Date.swift */; };
 		3FD42A6E1FC99D34005B9164 /* GameItemsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A6D1FC99D34005B9164 /* GameItemsTests.swift */; };
+		3FD42A711FC9B91E005B9164 /* FetchGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A701FC9B91E005B9164 /* FetchGames.swift */; };
+		3FD42A741FC9B974005B9164 /* FetchGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A731FC9B974005B9164 /* FetchGamesTests.swift */; };
+		3FD42A771FC9B9CD005B9164 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A761FC9B9CD005B9164 /* Mocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		3FD42A661FC98704005B9164 /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
 		3FD42A6B1FC99574005B9164 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3FD42A6D1FC99D34005B9164 /* GameItemsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemsTests.swift; sourceTree = "<group>"; };
+		3FD42A701FC9B91E005B9164 /* FetchGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGames.swift; sourceTree = "<group>"; };
+		3FD42A731FC9B974005B9164 /* FetchGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGamesTests.swift; sourceTree = "<group>"; };
+		3FD42A761FC9B9CD005B9164 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,8 @@
 		3FD42A521FC9857A005B9164 /* IGT-TestTests */ = {
 			isa = PBXGroup;
 			children = (
+				3FD42A751FC9B9B6005B9164 /* Mocks */,
+				3FD42A721FC9B95B005B9164 /* UseCases */,
 				3FD42A631FC986A3005B9164 /* Model */,
 				3FD42A531FC9857A005B9164 /* IGT_TestTests.swift */,
 				3FD42A551FC9857A005B9164 /* Info.plist */,
@@ -129,6 +137,7 @@
 		3FD42A601FC985DF005B9164 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				3FD42A701FC9B91E005B9164 /* FetchGames.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -162,6 +171,22 @@
 				3FD42A6B1FC99574005B9164 /* Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3FD42A721FC9B95B005B9164 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				3FD42A731FC9B974005B9164 /* FetchGamesTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		3FD42A751FC9B9B6005B9164 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3FD42A761FC9B9CD005B9164 /* Mocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD42A411FC9857A005B9164 /* ViewController.swift in Sources */,
+				3FD42A711FC9B91E005B9164 /* FetchGames.swift in Sources */,
 				3FD42A3F1FC98579005B9164 /* AppDelegate.swift in Sources */,
 				3FD42A671FC98704005B9164 /* GameItem.swift in Sources */,
 				3FD42A6C1FC99574005B9164 /* Date.swift in Sources */,
@@ -278,8 +304,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD42A771FC9B9CD005B9164 /* Mocks.swift in Sources */,
 				3FD42A651FC986D3005B9164 /* GameItemTests.swift in Sources */,
 				3FD42A6E1FC99D34005B9164 /* GameItemsTests.swift in Sources */,
+				3FD42A741FC9B974005B9164 /* FetchGamesTests.swift in Sources */,
 				3FD42A541FC9857A005B9164 /* IGT_TestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

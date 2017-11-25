@@ -8,22 +8,6 @@
 
 import Foundation
 
-struct GameItems {
-    let currency: String
-    let items: [GameItem]
-    
-    init?(json: [String: Any]) {
-        guard
-            let response = json["response"] as? String,
-            response == "success",
-            let currency = json["currency"] as? String,
-            let data = json["data"] as? [[String: Any]]
-            else {return nil}
-        self.currency = currency
-        self.items = data.flatMap{GameItem(json: $0)}
-    }
-}
-
 struct GameItem {
     let name: String
     let jackpot: Int
@@ -35,10 +19,28 @@ struct GameItem {
             let jackpot = json["jackpot"] as? Int,
             let stringDate = json["date"] as? String,
             let date = DateFormatter.rfc3339Formatter().date(from: stringDate)
-            else { return nil }
+            else {return nil}
         
         self.name = name
         self.jackpot = jackpot
         self.date = date
+    }
+}
+
+struct GameItems {
+    let currency: String
+    let items: [GameItem]
+    
+    init?(json: [String: Any]?) {
+        guard
+            let json = json,
+            let response = json["response"] as? String,
+            response == "success",
+            let currency = json["currency"] as? String,
+            let data = json["data"] as? [[String: Any]]
+            else {return nil}
+        
+        self.currency = currency
+        self.items = data.flatMap{GameItem(json: $0)}
     }
 }
