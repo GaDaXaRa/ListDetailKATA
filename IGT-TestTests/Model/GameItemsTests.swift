@@ -13,16 +13,11 @@ import XCTest
 class GameItemsTests: XCTestCase {
     
     func testShouldParseAllGames() {
-        guard let sut = GameItems(json: GameItemsTests.json) else {
+        guard let sut = Games(json: Mocks.gamesJSON) else {
             XCTFail()
             return
         }
         XCTAssertEqual("GBP", sut.currency)
         XCTAssertTrue(sut.items.count == 8)
     }
-}
-
-extension GameItemsTests {
-    fileprivate static let json = try! JSONSerialization.jsonObject(with: Mocks.gamesJSONString.data(using: .utf8)!, options: []) as! [String: Any]
-    
 }

@@ -9,6 +9,8 @@
 import Foundation
 
 struct Mocks {
+    static let gamesJSON = try! JSONSerialization.jsonObject(with: Mocks.gamesJSONString.data(using: .utf8)!, options: []) as! [String: Any]
+    
     static let gamesJSONString = """
                         {
                         "response": "success",

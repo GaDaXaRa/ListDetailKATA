@@ -20,9 +20,9 @@ class FetchGames: NSObject {
         self.fetchGamesTask = fetchGamesTask
     }
     
-    func fetchGames(_ completion: @escaping (GameItems?) -> ()) {
+    func fetchGames(_ completion: @escaping (Games?) -> ()) {
         fetchGamesTask.fetchGames { (json) in
-            completion(GameItems(json: json))
+            completion(Games(json: json))
         }
     }
 

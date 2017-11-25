@@ -27,12 +27,11 @@ class FetchGamesTests: XCTestCase {
                 XCTFail()
             }
         }
-    }
-    
+    }    
 }
 
 extension FetchGamesTask {
     func fetchGames(_ completion: @escaping ([String: Any]?) -> ()) {
-        completion(try! JSONSerialization.jsonObject(with: Mocks.gamesJSONString.data(using: .utf8)!, options: []) as? [String: Any])
+        completion(Mocks.gamesJSON)
     }
 }
