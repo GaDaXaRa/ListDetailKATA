@@ -14,6 +14,7 @@ extension GameItemTests {
     fileprivate static let gameName = "Game 1"
     fileprivate static let gameJackpot = 34000000
     fileprivate static let gameDate = "2015-01-25T20:20:30+01:00"
+    fileprivate static let currency = "GBP"
     
     fileprivate static let gameItemJSON = """
                                 {
@@ -29,13 +30,14 @@ extension GameItemTests {
 class GameItemTests: XCTestCase {
     
     func testShouldParseGameItem() {
-        guard let sut = GameItem(json: GameItemTests.json) else {
+        guard let sut = GameItem(json: GameItemTests.json, currency: GameItemTests.currency) else {
             XCTFail()
             return
         }
         XCTAssertEqual(GameItemTests.gameName, sut.name)
         XCTAssertEqual(GameItemTests.gameJackpot, sut.jackpot)
         XCTAssertEqual(DateFormatter.rfc3339Formatter.date(from: GameItemTests.gameDate), sut.date)
+        XCTAssertEqual(GameItemTests.currency, sut.currency)
     }
     
 }

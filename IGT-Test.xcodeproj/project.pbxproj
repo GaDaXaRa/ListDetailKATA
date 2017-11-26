@@ -34,6 +34,7 @@
 		3FD42AA21FCB23DD005B9164 /* GameDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD42AA11FCB23DD005B9164 /* GameDetail.storyboard */; };
 		3FD42AA51FCB27CF005B9164 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42AA41FCB27CF005B9164 /* GameDetailViewController.swift */; };
 		3FD42AA71FCB28E4005B9164 /* GameDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42AA61FCB28E4005B9164 /* GameDetailPresenter.swift */; };
+		3FD42AA91FCB3694005B9164 /* CurrencyViewModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42AA81FCB3694005B9164 /* CurrencyViewModelAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		3FD42AA11FCB23DD005B9164 /* GameDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameDetail.storyboard; sourceTree = "<group>"; };
 		3FD42AA41FCB27CF005B9164 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		3FD42AA61FCB28E4005B9164 /* GameDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailPresenter.swift; sourceTree = "<group>"; };
+		3FD42AA81FCB3694005B9164 /* CurrencyViewModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,7 @@
 				3FD42A6A1FC99561005B9164 /* Extensions */,
 				3FD42A621FC9866C005B9164 /* Tasks */,
 				3FD42A601FC985DF005B9164 /* UseCases */,
-				3FD42A611FC985E5005B9164 /* Presenter */,
+				3FD42A611FC985E5005B9164 /* Presenters */,
 				3FD42A5F1FC985D9005B9164 /* View */,
 				3FD42A5E1FC985CF005B9164 /* Model */,
 				3FD42A3E1FC98579005B9164 /* AppDelegate.swift */,
@@ -192,17 +194,18 @@
 				3FD42A701FC9B91E005B9164 /* FetchGames.swift */,
 				3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */,
 				3FD42A7E1FCA00F0005B9164 /* DiskCodablePersistence.swift */,
+				3FD42AA81FCB3694005B9164 /* CurrencyViewModelAdapter.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		3FD42A611FC985E5005B9164 /* Presenter */ = {
+		3FD42A611FC985E5005B9164 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
 				3FD42A951FCAE5EF005B9164 /* GamesListPresenter.swift */,
 				3FD42AA61FCB28E4005B9164 /* GameDetailPresenter.swift */,
 			);
-			path = Presenter;
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		3FD42A621FC9866C005B9164 /* Tasks */ = {
@@ -226,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD42A6B1FC99574005B9164 /* Date.swift */,
+				3FD42A9A1FCAF1A8005B9164 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				3FD42A981FCAEDCC005B9164 /* GamesDependencies.swift */,
-				3FD42A9A1FCAF1A8005B9164 /* UIView.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				3FD42A941FCAE570005B9164 /* GameItemCollectionViewCell.swift in Sources */,
 				3FD42AA71FCB28E4005B9164 /* GameDetailPresenter.swift in Sources */,
 				3FD42AA51FCB27CF005B9164 /* GameDetailViewController.swift in Sources */,
+				3FD42AA91FCB3694005B9164 /* CurrencyViewModelAdapter.swift in Sources */,
 				3FD42AA01FCB1F7D005B9164 /* RootWireframe.swift in Sources */,
 				3FD42A711FC9B91E005B9164 /* FetchGames.swift in Sources */,
 				3FD42A791FC9C166005B9164 /* TimedCodableCache.swift in Sources */,

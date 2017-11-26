@@ -22,7 +22,7 @@ struct Games: Codable {
             else {return nil}
         
         self.currency = currency
-        self.items = data.flatMap{GameItem(json: $0)}
+        self.items = data.flatMap{GameItem(json: $0, currency: currency)}
     }
 }
 
@@ -30,8 +30,9 @@ struct GameItem: Codable {
     let name: String
     let jackpot: Int
     let date: Date
+    let currency: String
     
-    init?(json: [String: Any]) {
+    init?(json: [String: Any], currency: String) {
         guard
             let name = json["name"] as? String,
             let jackpot = json["jackpot"] as? Int,
@@ -42,6 +43,7 @@ struct GameItem: Codable {
         self.name = name
         self.jackpot = jackpot
         self.date = date
+        self.currency = currency
     }
 }
 
@@ -57,7 +59,10 @@ extension GameItem: GameDetailViewModel {
     }
     
     var gameJackpot: String {
-        return "\(jackpot)"
+        guard let formattedJackpot = NumberFormatter.currencyFormatter(with: currency).string(for: jackpot) else {
+            return "\(jackpot)"
+        }
+        return formattedJackpot
     }
 }
 
