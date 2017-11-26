@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol FetchGamesTask {
-    func fetchGames(_ : @escaping ([String: Any]?) -> ())
+protocol FetchJSONTask {
+    func fetch(_ : @escaping ([String: Any]?) -> ())
 }
 
 protocol GamesCache {
@@ -19,10 +19,10 @@ protocol GamesCache {
 
 class FetchGames: NSObject {
     
-    private let fetchGamesTask: FetchGamesTask
+    private let fetchGamesTask: FetchJSONTask
     private let cache: GamesCache
     
-    init(fetchGamesTask: FetchGamesTask = HttpFetchGamesTask(), cache: GamesCache = TimedCodableCache<Games>()) {
+    init(fetchGamesTask: FetchJSONTask = HttpFetchGamesTask(), cache: GamesCache = TimedCodableCache<Games>()) {
         self.fetchGamesTask = fetchGamesTask
         self.cache = cache
     }
@@ -34,7 +34,7 @@ class FetchGames: NSObject {
                     completion(games)
                     return
                 }
-                self.fetchGamesTask.fetchGames { (json) in
+                self.fetchGamesTask.fetch { (json) in
                     guard let games = Games(json: json) else {
                         completion(nil)
                         return

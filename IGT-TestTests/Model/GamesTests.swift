@@ -10,7 +10,7 @@ import XCTest
 
 @testable import IGT_Test
 
-class GameItemsTests: XCTestCase {
+class GamesTests: XCTestCase {
     
     func testShouldParseAllGames() {
         guard let sut = Games(json: Mocks.gamesJSON) else {

@@ -19,9 +19,9 @@ class GamesDependencies: NSObject {
         return viewController
     }
     
-    static func gameDetailViewController(for game: GameItem?) -> GameDetailViewController {
+    static func gameDetailViewController(for game: GameItem?, user: User?) -> GameDetailViewController {
         let viewController = GamesDependencies.gameDetailStoryboard.instantiateViewController(withIdentifier: "GameDetailViewController") as! GameDetailViewController
-        viewController.presenter = GameDetailPresenter(game: game)
+        viewController.presenter = GameDetailPresenter(game: game, user: user)
         return viewController
     }
 }

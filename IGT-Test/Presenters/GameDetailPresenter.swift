@@ -10,21 +10,29 @@ import UIKit
 
 protocol GameDetailView: class {
     func configure(with viewModel: GameDetailViewModel)
+    func updateUser(_: UserHeaderViewModel)
 }
 
 class GameDetailPresenter: NSObject {
     weak var view: GameDetailView? 
     
     let game: GameItem?
+    let user: User?
     
-    init(game: GameItem?) {
+    init(game: GameItem?, user: User?) {
         self.game = game
+        self.user = user
     }
 }
 
 extension GameDetailPresenter: Presenter {
     func viewWillAppear() {
-        guard let game = game else {return}
-        view?.configure(with: game)
+        if let game = game {
+            view?.configure(with: game)
+        }
+        
+        if let user = user {
+            view?.updateUser(user)
+        }
     }
 }

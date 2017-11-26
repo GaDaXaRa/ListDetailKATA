@@ -1,15 +1,15 @@
 //
-//  FetchGamesTask.swift
+//  HttpFetchUserTask.swift
 //  IGT-Test
 //
-//  Created by Miguel Santiago Rodríguez on 25/11/17.
+//  Created by Miguel Santiago Rodríguez on 26/11/17.
 //  Copyright © 2017 Miguel Santiago Rodríguez. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct HttpFetchGamesTask: FetchJSONTask {
-    private let url = URL(string: "https://dl.dropboxusercontent.com/s/2ewt6r22zo4qwgx/gameData.json")!
+struct HttpFetchUserTask: FetchJSONTask {
+    private let url = URL(string: "https://dl.dropboxusercontent.com/s/5zz3hibrxpspoe5/playerInfo.json")!
     private let session: URLSession
     
     init(session: URLSession = URLSession.shared) {
@@ -20,10 +20,10 @@ struct HttpFetchGamesTask: FetchJSONTask {
         session.dataTask(with: url) { (data, response, error) in
             guard
                 let data = data, error == nil, let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                completion(nil)
-                return
+                    completion(nil)
+                    return
             }
             completion(json)
-        }.resume()
+            }.resume()
     }
 }

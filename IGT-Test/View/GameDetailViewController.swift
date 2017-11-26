@@ -14,6 +14,11 @@ protocol GameDetailViewModel {
     var gameDate: String {get}
 }
 
+protocol UserHeaderViewModel {
+    var userName: String {get}
+    var userBounty: String {get}
+}
+
 class GameDetailViewController: UIViewController {
 
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -38,6 +43,12 @@ class GameDetailViewController: UIViewController {
 }
 
 extension GameDetailViewController: GameDetailView {
+    
+    func updateUser(_ viewModel: UserHeaderViewModel) {
+        userNameLabel.text = viewModel.userName
+        userBountyLabel.text = viewModel.userBounty
+    }
+    
     func configure(with viewModel: GameDetailViewModel) {
         gameNameLabel.text = viewModel.gameName
         gameJackpotLabel.text = viewModel.gameJackpot

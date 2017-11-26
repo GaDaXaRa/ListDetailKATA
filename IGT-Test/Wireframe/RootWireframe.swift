@@ -22,7 +22,7 @@ class RootWireframe: NSObject {
 }
 
 extension RootWireframe: GamesWireframe {
-    func openDetail(with game: GameItem) {
-        navigationController.pushViewController(GamesDependencies.gameDetailViewController(for: game), animated: true)
+    func openDetail(with game: GameItem, user: User?) {
+        navigationController.pushViewController(GamesDependencies.gameDetailViewController(for: game, user: user), animated: true)
     }    
 }

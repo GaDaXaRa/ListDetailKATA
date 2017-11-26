@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GamesWireframe {
-    func openDetail(with game: GameItem)
+    func openDetail(with game: GameItem, user: User?)
 }
 
 protocol Presenter {
@@ -30,6 +30,7 @@ protocol GamesListView: class {
 
 class GamesListPresenter: NSObject {
     fileprivate let fetchGamesUseCase: FetchGames
+    fileprivate let fetchUserUseCase: FetchUser
     fileprivate let wireframe: GamesWireframe?
     
     var model: Games? {
@@ -37,10 +38,14 @@ class GamesListPresenter: NSObject {
             view?.reload()
         }
     }
+    
+    var user: User?
+    
     weak var view: GamesListView?
     
-    init(fetchGamesUseCase: FetchGames = FetchGames(), wireframe: GamesWireframe?) {
+    init(fetchGamesUseCase: FetchGames = FetchGames(), fetchUserUseCase: FetchUser = FetchUser(), wireframe: GamesWireframe?) {
         self.fetchGamesUseCase = fetchGamesUseCase
+        self.fetchUserUseCase = fetchUserUseCase
         self.wireframe = wireframe
     }
     
@@ -56,15 +61,25 @@ class GamesListPresenter: NSObject {
     
     func didSelect(at indexPath: IndexPath) {
         guard let games = model else {return}
-        wireframe?.openDetail(with: games.items[indexPath.row])
+        wireframe?.openDetail(with: games.items[indexPath.row], user: user)
+    }
+    
+    private func fetchGames() {
+        fetchGamesUseCase.fetchGames { (games) in
+            self.model = games
+        }
+    }
+    
+    private func fetchUser() {
+        fetchUserUseCase.fetchUser { (user) in
+            self.user = user
+        }
     }
 }
 
 extension GamesListPresenter: Presenter {
     func viewDidLoad() {
-        fetchGamesUseCase.fetchGames { (games) in
-            guard let games = games else {return}
-            self.model = games
-        }
+        fetchGames()
+        fetchUser()
     }
 }
