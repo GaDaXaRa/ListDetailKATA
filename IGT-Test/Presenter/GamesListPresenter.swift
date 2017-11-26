@@ -8,15 +8,19 @@
 
 import UIKit
 
+protocol GamesWireframe {
+    func openDetail(with game: GameItem)
+}
+
 protocol Presenter {
     func viewDidLoad()
-    func viewwillAppear()
+    func viewWillAppear()
     func viewDidAppear()
 }
 
 extension Presenter {
     func viewDidLoad() {}
-    func viewwillAppear() {}
+    func viewWillAppear() {}
     func viewDidAppear() {}
 }
 
@@ -26,6 +30,7 @@ protocol GamesListView: class {
 
 class GamesListPresenter: NSObject {
     fileprivate let fetchGamesUseCase: FetchGames
+    fileprivate let wireframe: GamesWireframe?
     
     var model: Games? {
         didSet {
@@ -34,8 +39,9 @@ class GamesListPresenter: NSObject {
     }
     weak var view: GamesListView?
     
-    init(fetchGamesUseCase: FetchGames = FetchGames()) {
+    init(fetchGamesUseCase: FetchGames = FetchGames(), wireframe: GamesWireframe?) {
         self.fetchGamesUseCase = fetchGamesUseCase
+        self.wireframe = wireframe
     }
     
     func numGames() -> Int {
@@ -46,6 +52,11 @@ class GamesListPresenter: NSObject {
     func game(at indexPath: IndexPath) -> GameItem {
         guard let games = model else {fatalError("Asking for not loaded games")}
         return games.items[indexPath.row]
+    }
+    
+    func didSelect(at indexPath: IndexPath) {
+        guard let games = model else {return}
+        wireframe?.openDetail(with: games.items[indexPath.row])
     }
 }
 

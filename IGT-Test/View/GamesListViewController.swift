@@ -47,5 +47,7 @@ extension GamesListViewController: UICollectionViewDataSource {
 }
 
 extension GamesListViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelect(at: indexPath)
+    }
 }

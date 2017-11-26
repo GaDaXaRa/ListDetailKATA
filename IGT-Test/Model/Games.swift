@@ -51,6 +51,16 @@ extension GameItem: CollectioItemViewModel {
     }
 }
 
+extension GameItem: GameDetailViewModel {
+    var gameName: String {
+        return name
+    }
+    
+    var gameJackpot: String {
+        return "\(jackpot)"
+    }
+}
+
 extension Games: Equatable {
     static func == (lhs: Games, rhs: Games) -> Bool {
         return lhs.currency == rhs.currency && lhs.items == rhs.items

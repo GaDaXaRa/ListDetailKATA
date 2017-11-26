@@ -10,11 +10,18 @@ import UIKit
 
 class GamesDependencies: NSObject {
     
-    private static let storyboard = UIStoryboard(name: "Games", bundle: nil)
+    private static let gamesListStoryboard = UIStoryboard(name: "GamesList", bundle: nil)
+    private static let gameDetailStoryboard = UIStoryboard(name: "GameDetail", bundle: nil)
     
-    static func gamesListViewController() -> GamesListViewController {
-        let viewController = GamesDependencies.storyboard.instantiateViewController(withIdentifier: "GamesListViewController") as! GamesListViewController
-        viewController.presenter = GamesListPresenter()
+    static func gamesListViewController(wireframe: GamesWireframe) -> GamesListViewController {
+        let viewController = GamesDependencies.gamesListStoryboard.instantiateViewController(withIdentifier: "GamesListViewController") as! GamesListViewController
+        viewController.presenter = GamesListPresenter(wireframe: wireframe)
+        return viewController
+    }
+    
+    static func gameDetailViewController(for game: GameItem?) -> GameDetailViewController {
+        let viewController = GamesDependencies.gameDetailStoryboard.instantiateViewController(withIdentifier: "GameDetailViewController") as! GameDetailViewController
+        viewController.presenter = GameDetailPresenter(game: game)
         return viewController
     }
 }
