@@ -9,6 +9,17 @@
 import Foundation
 
 struct Mocks {
+    static let userJSON = try! JSONSerialization.jsonObject(with: Mocks.userJSONString.data(using: .utf8)!, options: []) as! [String: Any]
+    
+    static let userJSONString = """
+            {
+              "name": "PlayerName",
+              "balance": 987654,
+              "avatarLink": "https://dl.dropboxusercontent.com/s/8a1j70z1ik3y0q8/user_avatar.png",
+              "lastLogindate": "04/05/2016T16:45"
+            }
+            """
+    
     static let gamesJSON = try! JSONSerialization.jsonObject(with: Mocks.gamesJSONString.data(using: .utf8)!, options: []) as! [String: Any]
     
     static let gamesJSONString = """

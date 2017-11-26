@@ -14,9 +14,9 @@ extension FetchGamesTests {
     
     fileprivate static let gamesFromHttp = Games(json: Mocks.gamesJSON)
     
-    class MockedFetchGamesTask: FetchGamesTask {
+    class MockedFetchGamesTask: FetchJSONTask {
         var called = false
-        func fetchGames(_ completion: @escaping ([String: Any]?) -> ()) {
+        func fetch(_ completion: @escaping ([String: Any]?) -> ()) {
             called = true
             completion(Mocks.gamesJSON)
         }
