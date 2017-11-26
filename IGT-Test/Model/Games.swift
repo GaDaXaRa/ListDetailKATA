@@ -54,6 +54,14 @@ extension GameItem: CollectioItemViewModel {
 }
 
 extension GameItem: GameDetailViewModel {
+    var gameDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale.current
+        return formatter.string(from: date)
+    }
+    
     var gameName: String {
         return name
     }

@@ -34,7 +34,7 @@
 		3FD42AA21FCB23DD005B9164 /* GameDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD42AA11FCB23DD005B9164 /* GameDetail.storyboard */; };
 		3FD42AA51FCB27CF005B9164 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42AA41FCB27CF005B9164 /* GameDetailViewController.swift */; };
 		3FD42AA71FCB28E4005B9164 /* GameDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42AA61FCB28E4005B9164 /* GameDetailPresenter.swift */; };
-		3FD42AA91FCB3694005B9164 /* CurrencyViewModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42AA81FCB3694005B9164 /* CurrencyViewModelAdapter.swift */; };
+		3FD42AAD1FCB45C1005B9164 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42AAC1FCB45C1005B9164 /* NumberFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +88,7 @@
 		3FD42AA11FCB23DD005B9164 /* GameDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameDetail.storyboard; sourceTree = "<group>"; };
 		3FD42AA41FCB27CF005B9164 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		3FD42AA61FCB28E4005B9164 /* GameDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailPresenter.swift; sourceTree = "<group>"; };
-		3FD42AA81FCB3694005B9164 /* CurrencyViewModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelAdapter.swift; sourceTree = "<group>"; };
+		3FD42AAC1FCB45C1005B9164 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +194,6 @@
 				3FD42A701FC9B91E005B9164 /* FetchGames.swift */,
 				3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */,
 				3FD42A7E1FCA00F0005B9164 /* DiskCodablePersistence.swift */,
-				3FD42AA81FCB3694005B9164 /* CurrencyViewModelAdapter.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -230,6 +229,7 @@
 			children = (
 				3FD42A6B1FC99574005B9164 /* Date.swift */,
 				3FD42A9A1FCAF1A8005B9164 /* UIView.swift */,
+				3FD42AAC1FCB45C1005B9164 /* NumberFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -431,9 +431,9 @@
 				3FD42A9B1FCAF1A8005B9164 /* UIView.swift in Sources */,
 				3FD42A8F1FCA2588005B9164 /* HttpFetchGamesTask.swift in Sources */,
 				3FD42A941FCAE570005B9164 /* GameItemCollectionViewCell.swift in Sources */,
+				3FD42AAD1FCB45C1005B9164 /* NumberFormatter.swift in Sources */,
 				3FD42AA71FCB28E4005B9164 /* GameDetailPresenter.swift in Sources */,
 				3FD42AA51FCB27CF005B9164 /* GameDetailViewController.swift in Sources */,
-				3FD42AA91FCB3694005B9164 /* CurrencyViewModelAdapter.swift in Sources */,
 				3FD42AA01FCB1F7D005B9164 /* RootWireframe.swift in Sources */,
 				3FD42A711FC9B91E005B9164 /* FetchGames.swift in Sources */,
 				3FD42A791FC9C166005B9164 /* TimedCodableCache.swift in Sources */,

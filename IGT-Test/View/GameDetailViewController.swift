@@ -11,6 +11,7 @@ import UIKit
 protocol GameDetailViewModel {
     var gameName: String {get}
     var gameJackpot: String {get}
+    var gameDate: String {get}
 }
 
 class GameDetailViewController: UIViewController {
@@ -20,6 +21,7 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var userBountyLabel: UILabel!
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var gameJackpotLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var presenter: GameDetailPresenter!
     
@@ -39,5 +41,6 @@ extension GameDetailViewController: GameDetailView {
     func configure(with viewModel: GameDetailViewModel) {
         gameNameLabel.text = viewModel.gameName
         gameJackpotLabel.text = viewModel.gameJackpot
+        dateLabel.text = viewModel.gameDate
     }
 }
