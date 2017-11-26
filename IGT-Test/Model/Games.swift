@@ -45,6 +45,11 @@ struct GameItem: Codable {
     }
 }
 
+extension GameItem: CollectioItemViewModel {
+    var itemTitle: String {
+        return name
+    }
+}
 
 extension Games: Equatable {
     static func == (lhs: Games, rhs: Games) -> Bool {
