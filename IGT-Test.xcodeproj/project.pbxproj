@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3FD42A3F1FC98579005B9164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A3E1FC98579005B9164 /* AppDelegate.swift */; };
-		3FD42A411FC9857A005B9164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A401FC9857A005B9164 /* ViewController.swift */; };
 		3FD42A441FC9857A005B9164 /* GamesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD42A421FC9857A005B9164 /* GamesList.storyboard */; };
 		3FD42A461FC9857A005B9164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD42A451FC9857A005B9164 /* Assets.xcassets */; };
 		3FD42A491FC9857A005B9164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD42A471FC9857A005B9164 /* LaunchScreen.storyboard */; };
@@ -57,7 +56,6 @@
 /* Begin PBXFileReference section */
 		3FD42A3B1FC98579005B9164 /* IGT-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IGT-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD42A3E1FC98579005B9164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FD42A401FC9857A005B9164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FD42A431FC9857A005B9164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GamesList.storyboard; sourceTree = "<group>"; };
 		3FD42A451FC9857A005B9164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FD42A481FC9857A005B9164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				3FD42A5F1FC985D9005B9164 /* View */,
 				3FD42A5E1FC985CF005B9164 /* Model */,
 				3FD42A3E1FC98579005B9164 /* AppDelegate.swift */,
-				3FD42A401FC9857A005B9164 /* ViewController.swift */,
 				3FD42A451FC9857A005B9164 /* Assets.xcassets */,
 				3FD42A471FC9857A005B9164 /* LaunchScreen.storyboard */,
 				3FD42A4A1FC9857A005B9164 /* Info.plist */,
@@ -429,7 +426,6 @@
 			files = (
 				3FD42A9D1FCAF3D5005B9164 /* FullScreenAdaptiveLayout.swift in Sources */,
 				3FD42A9B1FCAF1A8005B9164 /* UIView.swift in Sources */,
-				3FD42A411FC9857A005B9164 /* ViewController.swift in Sources */,
 				3FD42A8F1FCA2588005B9164 /* HttpFetchGamesTask.swift in Sources */,
 				3FD42A941FCAE570005B9164 /* GameItemCollectionViewCell.swift in Sources */,
 				3FD42AA71FCB28E4005B9164 /* GameDetailPresenter.swift in Sources */,
