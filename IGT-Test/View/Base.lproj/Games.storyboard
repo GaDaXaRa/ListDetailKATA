@@ -39,22 +39,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="167" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Hz-2l-NWt">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeN-oN-0So">
                                                     <rect key="frame" x="0.0" y="0.0" width="167" height="190"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMf-H5-t2u">
-                                                            <rect key="frame" x="28" y="28" width="111" height="134"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Hz-2l-NWt">
+                                                            <rect key="frame" x="1" y="1" width="165" height="188"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMf-H5-t2u">
+                                                                    <rect key="frame" x="28" y="28" width="109" height="132"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="nMf-H5-t2u" secondAttribute="trailing" constant="20" id="0ex-Ox-DmS"/>
+                                                                <constraint firstItem="nMf-H5-t2u" firstAttribute="top" secondItem="0Hz-2l-NWt" secondAttribute="topMargin" constant="20" id="Jen-Q5-pEc"/>
+                                                                <constraint firstItem="nMf-H5-t2u" firstAttribute="leading" secondItem="0Hz-2l-NWt" secondAttribute="leadingMargin" constant="20" id="pR4-P7-x9a"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="nMf-H5-t2u" secondAttribute="bottom" constant="20" id="rRL-wi-3cI"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="nMf-H5-t2u" secondAttribute="trailing" constant="20" id="0ex-Ox-DmS"/>
-                                                        <constraint firstItem="nMf-H5-t2u" firstAttribute="top" secondItem="0Hz-2l-NWt" secondAttribute="topMargin" constant="20" id="Jen-Q5-pEc"/>
-                                                        <constraint firstItem="nMf-H5-t2u" firstAttribute="leading" secondItem="0Hz-2l-NWt" secondAttribute="leadingMargin" constant="20" id="pR4-P7-x9a"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="nMf-H5-t2u" secondAttribute="bottom" constant="20" id="rRL-wi-3cI"/>
+                                                        <constraint firstItem="0Hz-2l-NWt" firstAttribute="top" secondItem="DeN-oN-0So" secondAttribute="top" constant="1" id="5kx-mf-M8x"/>
+                                                        <constraint firstItem="0Hz-2l-NWt" firstAttribute="leading" secondItem="DeN-oN-0So" secondAttribute="leading" constant="1" id="FQL-t2-PuC"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0Hz-2l-NWt" secondAttribute="bottom" constant="1" id="qOQ-ah-8Y1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0Hz-2l-NWt" secondAttribute="trailing" constant="1" id="ywN-sb-cFz"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -66,10 +83,10 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="0Hz-2l-NWt" firstAttribute="leading" secondItem="Xe1-PW-73W" secondAttribute="leading" id="6j5-Y8-OY7"/>
-                                            <constraint firstItem="0Hz-2l-NWt" firstAttribute="top" secondItem="Xe1-PW-73W" secondAttribute="top" id="7vq-p3-cYH"/>
-                                            <constraint firstAttribute="trailing" secondItem="0Hz-2l-NWt" secondAttribute="trailing" id="PPu-Ia-PCF"/>
-                                            <constraint firstAttribute="bottom" secondItem="0Hz-2l-NWt" secondAttribute="bottom" id="e2M-3p-m2F"/>
+                                            <constraint firstAttribute="trailing" secondItem="DeN-oN-0So" secondAttribute="trailing" id="1wR-qT-TAx"/>
+                                            <constraint firstItem="DeN-oN-0So" firstAttribute="top" secondItem="Xe1-PW-73W" secondAttribute="top" id="gae-03-10t"/>
+                                            <constraint firstAttribute="bottom" secondItem="DeN-oN-0So" secondAttribute="bottom" id="ifG-a8-K4R"/>
+                                            <constraint firstItem="DeN-oN-0So" firstAttribute="leading" secondItem="Xe1-PW-73W" secondAttribute="leading" id="rfb-fN-4Lh"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="titleLabel" destination="nMf-H5-t2u" id="hop-wS-nV3"/>
