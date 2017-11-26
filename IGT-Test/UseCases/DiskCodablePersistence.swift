@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct DiskCodablePersistence<T: Codable>: NSObject {
+class DiskCodablePersistence<T: Codable> {
     
     private let fileName: String
     private let encoder: JSONEncoder
@@ -28,19 +28,11 @@ struct DiskCodablePersistence<T: Codable>: NSObject {
     }
     
     func persist(_ info: T) {
-        do {
-            try encoder.encode(info).write(to: gamesLocation)
-        } catch {
-            fatalError(error.localizedDescription)
-        }
+        try? encoder.encode(info).write(to: gamesLocation)
     }
     
     func fetch() -> T? {
-        do {
-            return try decoder.decode(T.self, from: Data(contentsOf: gamesLocation))
-        } catch {
-            fatalError(error.localizedDescription)
-        }
+        return try? decoder.decode(T.self, from: Data(contentsOf: gamesLocation))
     }
 }
 

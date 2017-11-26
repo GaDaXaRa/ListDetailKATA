@@ -13,7 +13,7 @@ protocol CodableCachePersistence {
     func fetch() -> Codable?
 }
 
-struct TimedCodableCache<T: Codable> {
+class TimedCodableCache<T: Codable> {
     
     struct GamesAppointment: Codable {
         var date: Date
@@ -27,7 +27,7 @@ struct TimedCodableCache<T: Codable> {
         return persistence.fetch() as? GamesAppointment
     }
     
-    init(interval: TimeInterval = 60 * 60, persistence: CodableCachePersistence = DiskCodablePersistence<T>()) {
+    init(interval: TimeInterval = 60 * 60, persistence: CodableCachePersistence = DiskCodablePersistence<GamesAppointment>()) {
         self.interval = interval
         self.persistence = persistence
     }

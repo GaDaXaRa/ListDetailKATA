@@ -23,10 +23,19 @@
 		3FD42A791FC9C166005B9164 /* TimedCodableCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */; };
 		3FD42A7D1FC9C2B1005B9164 /* TimedCodableCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A7C1FC9C2B1005B9164 /* TimedCodableCacheTests.swift */; };
 		3FD42A7F1FCA00F0005B9164 /* DiskCodablePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A7E1FCA00F0005B9164 /* DiskCodablePersistence.swift */; };
+		3FD42A871FCA24E9005B9164 /* IGT_IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A861FCA24E9005B9164 /* IGT_IntegrationTests.swift */; };
+		3FD42A8F1FCA2588005B9164 /* HttpFetchGamesTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD42A8E1FCA2588005B9164 /* HttpFetchGamesTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3FD42A501FC9857A005B9164 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FD42A331FC98579005B9164 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FD42A3A1FC98579005B9164;
+			remoteInfo = "IGT-Test";
+		};
+		3FD42A891FCA24E9005B9164 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3FD42A331FC98579005B9164 /* Project object */;
 			proxyType = 1;
@@ -56,6 +65,10 @@
 		3FD42A781FC9C166005B9164 /* TimedCodableCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedCodableCache.swift; sourceTree = "<group>"; };
 		3FD42A7C1FC9C2B1005B9164 /* TimedCodableCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedCodableCacheTests.swift; sourceTree = "<group>"; };
 		3FD42A7E1FCA00F0005B9164 /* DiskCodablePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCodablePersistence.swift; sourceTree = "<group>"; };
+		3FD42A841FCA24E8005B9164 /* IGT-IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IGT-IntegrationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FD42A861FCA24E9005B9164 /* IGT_IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGT_IntegrationTests.swift; sourceTree = "<group>"; };
+		3FD42A881FCA24E9005B9164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FD42A8E1FCA2588005B9164 /* HttpFetchGamesTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpFetchGamesTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +86,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FD42A811FCA24E8005B9164 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,6 +101,7 @@
 			children = (
 				3FD42A3D1FC98579005B9164 /* IGT-Test */,
 				3FD42A521FC9857A005B9164 /* IGT-TestTests */,
+				3FD42A851FCA24E9005B9164 /* IGT-IntegrationTests */,
 				3FD42A3C1FC98579005B9164 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +111,7 @@
 			children = (
 				3FD42A3B1FC98579005B9164 /* IGT-Test.app */,
 				3FD42A4F1FC9857A005B9164 /* IGT-TestTests.xctest */,
+				3FD42A841FCA24E8005B9164 /* IGT-IntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +182,7 @@
 		3FD42A621FC9866C005B9164 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				3FD42A8E1FCA2588005B9164 /* HttpFetchGamesTask.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -196,6 +219,15 @@
 				3FD42A761FC9B9CD005B9164 /* Mocks.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		3FD42A851FCA24E9005B9164 /* IGT-IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FD42A861FCA24E9005B9164 /* IGT_IntegrationTests.swift */,
+				3FD42A881FCA24E9005B9164 /* Info.plist */,
+			);
+			path = "IGT-IntegrationTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +268,24 @@
 			productReference = 3FD42A4F1FC9857A005B9164 /* IGT-TestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3FD42A831FCA24E8005B9164 /* IGT-IntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FD42A8B1FCA24E9005B9164 /* Build configuration list for PBXNativeTarget "IGT-IntegrationTests" */;
+			buildPhases = (
+				3FD42A801FCA24E8005B9164 /* Sources */,
+				3FD42A811FCA24E8005B9164 /* Frameworks */,
+				3FD42A821FCA24E8005B9164 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FD42A8A1FCA24E9005B9164 /* PBXTargetDependency */,
+			);
+			name = "IGT-IntegrationTests";
+			productName = "IGT-IntegrationTests";
+			productReference = 3FD42A841FCA24E8005B9164 /* IGT-IntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -251,6 +301,11 @@
 						ProvisioningStyle = Automatic;
 					};
 					3FD42A4E1FC9857A005B9164 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3FD42A3A1FC98579005B9164;
+					};
+					3FD42A831FCA24E8005B9164 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3FD42A3A1FC98579005B9164;
@@ -272,6 +327,7 @@
 			targets = (
 				3FD42A3A1FC98579005B9164 /* IGT-Test */,
 				3FD42A4E1FC9857A005B9164 /* IGT-TestTests */,
+				3FD42A831FCA24E8005B9164 /* IGT-IntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +350,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FD42A821FCA24E8005B9164 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -302,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD42A411FC9857A005B9164 /* ViewController.swift in Sources */,
+				3FD42A8F1FCA2588005B9164 /* HttpFetchGamesTask.swift in Sources */,
 				3FD42A711FC9B91E005B9164 /* FetchGames.swift in Sources */,
 				3FD42A791FC9C166005B9164 /* TimedCodableCache.swift in Sources */,
 				3FD42A3F1FC98579005B9164 /* AppDelegate.swift in Sources */,
@@ -324,6 +388,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FD42A801FCA24E8005B9164 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD42A871FCA24E9005B9164 /* IGT_IntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -331,6 +403,11 @@
 			isa = PBXTargetDependency;
 			target = 3FD42A3A1FC98579005B9164 /* IGT-Test */;
 			targetProxy = 3FD42A501FC9857A005B9164 /* PBXContainerItemProxy */;
+		};
+		3FD42A8A1FCA24E9005B9164 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FD42A3A1FC98579005B9164 /* IGT-Test */;
+			targetProxy = 3FD42A891FCA24E9005B9164 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -525,6 +602,40 @@
 			};
 			name = Release;
 		};
+		3FD42A8C1FCA24E9005B9164 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KDP29GBQ4N;
+				INFOPLIST_FILE = "IGT-IntegrationTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gadaxara.IGT-IntegrationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IGT-Test.app/IGT-Test";
+			};
+			name = Debug;
+		};
+		3FD42A8D1FCA24E9005B9164 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KDP29GBQ4N;
+				INFOPLIST_FILE = "IGT-IntegrationTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gadaxara.IGT-IntegrationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IGT-Test.app/IGT-Test";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -551,6 +662,15 @@
 			buildConfigurations = (
 				3FD42A5C1FC9857A005B9164 /* Debug */,
 				3FD42A5D1FC9857A005B9164 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FD42A8B1FCA24E9005B9164 /* Build configuration list for PBXNativeTarget "IGT-IntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FD42A8C1FCA24E9005B9164 /* Debug */,
+				3FD42A8D1FCA24E9005B9164 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

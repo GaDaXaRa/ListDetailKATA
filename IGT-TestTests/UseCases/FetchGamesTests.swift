@@ -13,50 +13,54 @@ import XCTest
 extension FetchGamesTests {
     
     fileprivate static let gamesFromHttp = Games(json: Mocks.gamesJSON)
-    fileprivate static let gamesFromCache = Games(json: Mocks.cachedGamesJSON)
     
-    struct MockedFetchGamesTask: FetchGamesTask {
+    class MockedFetchGamesTask: FetchGamesTask {
+        var called = false
         func fetchGames(_ completion: @escaping ([String: Any]?) -> ()) {
+            called = true
             completion(Mocks.gamesJSON)
         }
     }
     
-    fileprivate struct EmptyCache: GamesCache {
-        func store(games: Games) {}
-        
-        func fetch(_ completion: @escaping (Games?) -> ()) {
-            completion(nil)
+    fileprivate class MockedCache: GamesCache {
+        var games: Games?
+        func store(games: Games) {
+            self.games = games
         }
-    }
-    
-    fileprivate struct FullCache: GamesCache {
-        func store(games: Games) {}
         
         func fetch(_ completion: @escaping (Games?) -> ()) {
-            completion(Games(json: Mocks.cachedGamesJSON))
+            completion(games)
         }
     }
 }
 
 class FetchGamesTests: XCTestCase {
     
+    fileprivate let mockedCache = MockedCache()
+    fileprivate let mockedTask = MockedFetchGamesTask()
+    
     func testShouldCallTaskIfNotCached() {
-        let sut = FetchGames(fetchGamesTask: MockedFetchGamesTask(), cache: EmptyCache())
+        let sut = FetchGames(fetchGamesTask: mockedTask, cache: mockedCache)
         let sutExpectation = expectation(description: "Expect task is called")
         sut.fetchGames { (games) in
             XCTAssertEqual(games, FetchGamesTests.gamesFromHttp)
+            XCTAssertTrue(self.mockedTask.called)
             sutExpectation.fulfill()
         }
         
         waitForExpectations()
     }
     
-    func testShouldReturnCacheIfCached() {
-        let sut = FetchGames(fetchGamesTask: MockedFetchGamesTask(), cache: FullCache())
+    func testShouldNotCallTaskIfIfCached() {
+        var sut = FetchGames(fetchGamesTask: MockedFetchGamesTask(), cache: mockedCache)
         let sutExpectation = expectation(description: "Expect result from cache")
         sut.fetchGames { (games) in
-            XCTAssertEqual(games, FetchGamesTests.gamesFromCache)
-            sutExpectation.fulfill()
+            sut = FetchGames(fetchGamesTask: self.mockedTask, cache: self.mockedCache)
+            sut.fetchGames({ (games) in
+                XCTAssertEqual(games, FetchGamesTests.gamesFromHttp)
+                XCTAssertFalse(self.mockedTask.called)
+                sutExpectation.fulfill()
+            })
         }
         
         waitForExpectations()
